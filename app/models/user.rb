@@ -17,15 +17,9 @@ class User < ApplicationRecord
   validates :nickname,
             presence: true
 
-  validates :email,
-            uniqueness: true
-
   validates :password,
             confirmation: true,
             format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: 'Include both letters and numbers' }
-
-  validates :password_confirmation,
-            presence: true
 
   validates :birth_day,
             presence: true

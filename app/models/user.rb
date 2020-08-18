@@ -21,7 +21,6 @@ class User < ApplicationRecord
             uniqueness: true
 
   validates :password,
-            length: { minimum: 6 },
             confirmation: true,
             format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: 'Include both letters and numbers' }
 

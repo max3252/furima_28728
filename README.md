@@ -45,7 +45,7 @@ Things you may want to cover:
 | status     | integer    | null: false                    |
 | prefecture | integer    | null: false                    |
 | burden     | integer    | null: false                    |
-| days       | integer    | null: false                    |
+| day        | integer    | null: false                    |
 | user       | references | null: false, foreign_key: true |
 
 ### Association

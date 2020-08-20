@@ -25,5 +25,4 @@ class User < ApplicationRecord
             presence: true
 
   has_many :items
-
 end

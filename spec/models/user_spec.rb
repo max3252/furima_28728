@@ -53,7 +53,7 @@ describe User do
       it 'emailに@が含まれていない場合は登録できない' do
         @user.email = 'aaa.com'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Email is invalid")
+        expect(@user.errors.full_messages).to include('Email is invalid')
       end
 
       it 'passwordが空では登録できないこと' do

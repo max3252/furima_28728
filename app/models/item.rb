@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   has_one_attached :image
-  
+  belongs_to :user
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :category
   belongs_to_active_hash :status
@@ -8,9 +8,9 @@ class Item < ApplicationRecord
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :day
   
-  validates :title, :text, :image, :category, :status, :burden, :prefecture, :day, presence: true
+  validates :name, :text, :image, :category, :status, :burden, :prefecture, :day, :price presence: true
 
   
-  validates :category_id, :status_id, :burden_id, :purefecture_id, :day_id, numericality: { other_than: 1 } 
+  validates :category_id, :status_id, :burden_id, :prefecture_id, :day_id, numericality: { other_than: 1 } 
  
 end

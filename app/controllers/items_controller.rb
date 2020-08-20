@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
   end
 
   def create
+    #もしかしたら【Item.create(item.params)】でいけるかも、したの記述はいらない？
     @item = Item.new(item_params)
     if @item.save
       redirect_to root_path

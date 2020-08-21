@@ -18,6 +18,6 @@ class Item < ApplicationRecord
     validates :day_id
   end
 
-  validates :price, numericality: { greater_than: 300, less_than: 9999999, message: 'Out of setting range' }
+  validates :price, numericality: { greater_than: 300, less_than: 9_999_999, message: 'Out of setting range' }
   validates :price, format: { with: /\A[0-9]+\z/, message: 'Half-width number' }
 end

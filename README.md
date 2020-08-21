@@ -35,18 +35,18 @@ Things you may want to cover:
 
 ## items テーブル
 
-| Column     | Type       | Options                        |
-| ---------- | ---------- | ------------------------------ |
-| name       | string     | null: false                    |
-| text       | text       | null: false                    |
-| image      | string     | null: false                    |
-| price      | integer    | null: false                    |
-| category   | integer    | null: false                    |
-| status     | integer    | null: false                    |
-| prefecture | integer    | null: false                    |
-| burden     | integer    | null: false                    |
-| days       | integer    | null: false                    |
-| user       | references | null: false, foreign_key: true |
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| name          | string     | null: false                    |
+| text          | text       | null: false                    |
+| image         | string     | null: false                    |
+| price         | integer    | null: false                    |
+| category_id   | integer    | null: false                    |
+| status_id     | integer    | null: false                    |
+| prefecture_id | integer    | null: false                    |
+| burden_id     | integer    | null: false                    |
+| day_id        | integer    | null: false                    |
+| user          | references | null: false, foreign_key: true |
 
 ### Association
 

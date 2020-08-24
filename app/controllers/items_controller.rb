@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
-  before_action :set_item, only: [:show, :edit, :update, :delete]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
     @items = Item.all
@@ -34,8 +34,10 @@ class ItemsController < ApplicationController
     end
   end
 
-  def delete
-    item.destory
+  def destroy
+    @item.destroy
+    redirect_to root_path(@user)
+  end
 
   private
 

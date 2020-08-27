@@ -2,10 +2,12 @@ class AddressBuy
   include ActiveModel::Model
   attr_accessor :user_id, :item_id, :postal_code, :prefecture_id, :city, :address_line1, :address_line2, :phone_num, :token
 
+  zenkaku = /\A[ぁ-んァ-ン一-龥]/
+
   with_options presence: true do
     validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/, message: 'Input correctly' }
-    validates :city, format: { with: /\A[ぁ-んァ-ン一-龥]/ }
-    validates :address_line1, format: { with: /\A[ぁ-んァ-ン一-龥]/ }
+    validates :city, format: { with: zenkaku }
+    validates :address_line1, format: { with: zenkaku }
     validates :phone_num, format: { with: /\A\d{10,11}\z/, message: 'Input correctly' }
   end
 

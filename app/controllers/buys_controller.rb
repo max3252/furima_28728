@@ -1,6 +1,8 @@
 class BuysController < ApplicationController
   before_action :authenticate_user!
-
+  before_action :solditem_buy
+  before_action :buy_direct
+  
   def index
     @item = Item.find(params[:item_id])
     @buy = AddressBuy.new
@@ -38,6 +40,18 @@ class BuysController < ApplicationController
   end
 
   
-  #def 
+  def solditem_buy
+    @item = Item.find(params[:item_id])
+    if @item.buy
+      redirect_to root_path
+    end
+  end
+
+  def buy_direct
+    @item = Item.find(params[:item_id])
+    if @item.user_id == current_user.id
+      redirect_to root_path
+    end
+  end
 
 end

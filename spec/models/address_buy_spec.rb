@@ -58,6 +58,13 @@ describe AddressBuy do
         @address_buy.valid?
         expect(@address_buy.errors.full_messages).to include('Phone num Input correctly')
       end
+
+      it 'phone_numが11桁以内でないと保存できないこと' do
+        @address_buy.phone_num = '090123412345'
+        @address_buy.valid?
+        expect(@address_buy.errors.full_messages).to include('Phone num Input correctly')
+      end
+      
     end
   end
 end

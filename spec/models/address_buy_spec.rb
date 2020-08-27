@@ -14,9 +14,8 @@ describe AddressBuy do
         @address_buy.address_line2 = nil
         expect(@address_buy).to be_valid
       end
-
     end
-   
+
     context '商品購入がうまくいかないとき' do
       it 'postal_codeが空では保存できないこと' do
         @address_buy.postal_code = ''
@@ -27,13 +26,13 @@ describe AddressBuy do
       it 'postal_codeが"-"を含まないと保存できないこと' do
         @address_buy.postal_code = '1111111'
         @address_buy.valid?
-        expect(@address_buy.errors.full_messages).to include("Postal code Input correctly")
+        expect(@address_buy.errors.full_messages).to include('Postal code Input correctly')
       end
 
       it 'prefecture_idを選択しなければ出品できない' do
         @address_buy.prefecture_id = '1'
         @address_buy.valid?
-        expect(@address_buy.errors.full_messages).to include("Prefecture Select")
+        expect(@address_buy.errors.full_messages).to include('Prefecture Select')
       end
 
       it 'cityが空だと保存できないこと' do
@@ -57,9 +56,8 @@ describe AddressBuy do
       it 'phone_numが"-"を含むとと保存できないこと' do
         @address_buy.phone_num = '090-1234123'
         @address_buy.valid?
-        expect(@address_buy.errors.full_messages).to include("Phone num Input correctly")
+        expect(@address_buy.errors.full_messages).to include('Phone num Input correctly')
       end
-
     end
   end
 end

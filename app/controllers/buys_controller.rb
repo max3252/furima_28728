@@ -2,7 +2,7 @@ class BuysController < ApplicationController
   before_action :authenticate_user!
   before_action :solditem_buy
   before_action :buy_direct
-  #test
+  
   def index
     @item = Item.find(params[:item_id])
     @buy = AddressBuy.new

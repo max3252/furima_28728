@@ -12,5 +12,4 @@ window.addEventListener('load', function(){
     tax_price.innerHTML = tax
     profit_price.innerHTML = profit
   })
-  
 })

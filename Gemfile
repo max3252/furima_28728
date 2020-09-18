@@ -69,6 +69,10 @@ gem 'active_hash'
 
 gem 'payjp'
 
+gem 'kaminari'
+
+gem 'jquery-rails'
+
 group :production do
   gem 'rails_12factor'
 end

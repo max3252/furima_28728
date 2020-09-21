@@ -7,9 +7,7 @@
   padding: 2vh 15vw;
   display: flex;
   flex-direction: column;
-  background-color :lightyellow;
-  position: fixed;
-  z-index: 9999;
+  background-color :#3ccace
 }
 
 
